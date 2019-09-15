@@ -2,10 +2,18 @@ package a
 
 import (
 	"log"
+	"strings"
 	"testing"
 )
 
 func TestF(t *testing.T) {
-	s := F("foo")
-	log.Println(s)
+	s := "foo"
+	x := F("foo")
+	log.Println(x)
+	if !strings.HasPrefix(x, "A v") {
+		t.Errorf("errornous prefix")
+	}
+	if !strings.HasSuffix(x, s) {
+		t.Errorf("errornous suffix")
+	}
 }
